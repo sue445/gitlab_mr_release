@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+require "gitlab_mr_release"
