@@ -5,6 +5,8 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 TODO: Delete this and the text above, and describe your gem
 
 [![Build Status](https://travis-ci.org/sue445/gitlab_mr_release.svg?branch=master)](https://travis-ci.org/sue445/gitlab_mr_release)
+[![Code Climate](https://codeclimate.com/github/sue445/gitlab_mr_release/badges/gpa.svg)](https://codeclimate.com/github/sue445/gitlab_mr_release)
+[![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 
 ## Installation
 
