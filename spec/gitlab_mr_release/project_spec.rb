@@ -39,4 +39,36 @@ describe GitlabMrRelease::Project do
 
     it { should contain_exactly(5, 6) }
   end
+
+  describe "#generate_description" do
+    subject { project.generate_description(iids, template) }
+
+    let(:iids) { [5] }
+
+    let(:template) do
+      <<-MARKDNWN.strip_heredoc
+      # MergeRequests
+      <% merge_requests.each do |mr| %>
+      * [ ] !<%= mr.iid %> <%= mr.title %>
+      <% end %>
+      MARKDNWN
+    end
+
+    let(:description) do
+      <<-MARKDNWN.strip_heredoc
+      # MergeRequests
+
+      * [ ] !5 Add yes
+
+      MARKDNWN
+    end
+
+    before do
+      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=5").
+        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+        to_return(status: 200, body: read_stub("merge_requests_with_iid.json"), headers: {})
+    end
+
+    it { should eq description }
+  end
 end

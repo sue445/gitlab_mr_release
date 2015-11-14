@@ -38,6 +38,11 @@ module GitlabMrRelease
       mr
     end
 
+    def generate_description(iids, template)
+      merge_requests = iids.map { |iid| merge_request(iid) }
+      ERB.new(template).result(binding)
+    end
+
     private
 
     def escaped_project_name
