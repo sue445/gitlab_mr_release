@@ -5,14 +5,12 @@ module GitlabMrRelease
     # @param api_endpoint     [String]
     # @param private_token    [String]
     # @param project_name     [String]
-    # @param allow_tag_format [Regexp]
-    def initialize(api_endpoint:, private_token:, project_name:, logger:)
+    def initialize(api_endpoint:, private_token:, project_name:)
       Gitlab.configure do |config|
         config.endpoint      = api_endpoint
         config.private_token = private_token
       end
       @project_name = project_name
-      @logger = logger
     end
 
     def web_url

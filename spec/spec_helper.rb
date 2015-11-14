@@ -23,7 +23,7 @@ require "active_support/all"
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
-Dotenv.load
+Dotenv.load(".env.gitlab", "~/.env.gitlab")
 
 def spec_dir
   Pathname(__dir__)
