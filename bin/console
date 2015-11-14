@@ -6,9 +6,17 @@ require "gitlab_mr_release"
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
+require "dotenv"
+Dotenv.load(".env.gitlab", "~/.env.gitlab")
 
-require "irb"
-IRB.start
+clean_room = Object.new
+clean_room.instance_eval do
+  @project = GitlabMrRelease::Project.new(
+    api_endpoint:  ENV["GITLAB_API_ENDPOINT"],
+    private_token: ENV["GITLAB_API_PRIVATE_TOKEN"],
+    project_name:  ENV["GITLAB_PROJECT_NAME"],
+  )
+end
+
+require "pry"
+Pry.start(clean_room)

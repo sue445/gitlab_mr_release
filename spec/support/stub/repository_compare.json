@@ -1,0 +1,82 @@
+{
+  "commit": {
+    "id": "17d7f1fc1c48ea243c30498074621e1d0b24ff9f",
+    "short_id": "17d7f1fc",
+    "title": "bump version",
+    "author_name": "sue445",
+    "author_email": "sue445@sue445.net",
+    "created_at": "2015-10-01T01:29:18.000+09:00",
+    "message": "bump version\n\n0.0.3\n"
+  },
+  "commits": [
+    {
+      "id": "5a498ef5be22b7a82e6e4d4221952afb85cf3cf7",
+      "short_id": "5a498ef5",
+      "title": "Add yes",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "created_at": "2015-10-01T01:26:21.000+09:00",
+      "message": "Add yes\n"
+    },
+    {
+      "id": "0fe400b3113d89ebcc470397c0d6c4b25dead221",
+      "short_id": "0fe400b3",
+      "title": "Merge branch 'feature/yes' into 'master'\r",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "created_at": "2015-09-30T16:26:59.000+00:00",
+      "message": "Merge branch 'feature/yes' into 'master'\r\n\r\nAdd yes\r\n\r\n\r\n\r\nSee merge request !5"
+    },
+    {
+      "id": "06cfff540ea328491e4587c6f89db2592a196bfc",
+      "short_id": "06cfff54",
+      "title": "Add gogo",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "created_at": "2015-10-01T01:28:18.000+09:00",
+      "message": "Add gogo\n"
+    },
+    {
+      "id": "6604dcfced5f97876a99f86ca20778d979e275ea",
+      "short_id": "6604dcfc",
+      "title": "Merge branch 'feature/gogo' into 'master'\r",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "created_at": "2015-09-30T16:28:52.000+00:00",
+      "message": "Merge branch 'feature/gogo' into 'master'\r\n\r\nAdd gogo\r\n\r\n\r\n\r\nSee merge request !6"
+    },
+    {
+      "id": "17d7f1fc1c48ea243c30498074621e1d0b24ff9f",
+      "short_id": "17d7f1fc",
+      "title": "bump version",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "created_at": "2015-10-01T01:29:18.000+09:00",
+      "message": "bump version\n\n0.0.3\n"
+    }
+  ],
+  "diffs": [
+    {
+      "old_path": "README.md",
+      "new_path": "README.md",
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "diff": "--- a/README.md\n+++ b/README.md\n@@ -7,3 +7,10 @@\n * splash_star\n   * cure_bloom\n   * cure_egret\n+* yes_gogo\n+  * cure_dream\n+  * cure_rouge\n+  * cure_lemonade\n+  * cure_mint\n+  * cure_aqua\n+  * milky_rose\n",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false
+    },
+    {
+      "old_path": "VERSION",
+      "new_path": "VERSION",
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "diff": "--- a/VERSION\n+++ b/VERSION\n@@ -1 +1 @@\n-0.0.2\n+0.0.3\n",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false
+    }
+  ],
+  "compare_timeout": false,
+  "compare_same_ref": false
+}
