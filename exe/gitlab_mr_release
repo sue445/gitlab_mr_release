@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
-require "gitlab_mr_release"
+require "gitlab_mr_release/cli"
+GitlabMrRelease::CLI.start(ARGV)
