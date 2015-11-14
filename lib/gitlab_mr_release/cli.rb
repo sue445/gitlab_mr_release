@@ -55,12 +55,16 @@ module GitlabMrRelease
         private_token: ENV["GITLAB_API_PRIVATE_TOKEN"],
         project_name:  ENV["GITLAB_PROJECT_NAME"],
       )
-      project.create_merge_request(
+
+      mr = project.create_merge_request(
         source_branch: options[:source],
         target_branch: options[:target],
         title:         title,
         template:      template,
       )
+
+      mr_url = "#{project.web_url}/merge_requests/#{mr.iid}"
+      puts "MergeRequst is created: #{mr_url}"
     end
 
     private
