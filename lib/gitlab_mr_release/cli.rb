@@ -35,6 +35,12 @@ module GitlabMrRelease
     option :target, aliases: "-t", required: true, desc: "Target branch (e.g. master)"
     option :title,  desc: "MergeRequest title (default. 'Release :source -> :target')"
     def create
+      Dotenv.load(*GITLAB_ENV_FILES)
+
+      assert_env("GITLAB_API_ENDPOINT")
+      assert_env("GITLAB_API_PRIVATE_TOKEN")
+      assert_env("GITLAB_PROJECT_NAME")
+
       title = options[:title] || default_title
 
       template =
@@ -58,6 +64,13 @@ module GitlabMrRelease
     end
 
     private
+
+    def assert_env(name)
+      unless ENV[name]
+        puts "Error: Environment variable #{name} is required"
+        exit!
+      end
+    end
 
     def default_title
       "Release #{options[:source]} -> #{options[:target]}"
