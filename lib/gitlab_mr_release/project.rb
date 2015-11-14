@@ -43,6 +43,16 @@ module GitlabMrRelease
       ERB.new(template).result(binding)
     end
 
+    def create_merge_request(source_branch:, target_branch:, title:, template:)
+      iids = merge_request_iids_between(target_branch, source_branch)
+      options = {
+        source_branch: source_branch,
+        target_branch: target_branch,
+        description:   generate_description(iids, template),
+      }
+      Gitlab.create_merge_request(escaped_project_name, title, options)
+    end
+
     private
 
     def escaped_project_name
