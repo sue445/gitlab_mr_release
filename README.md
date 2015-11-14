@@ -1,33 +1,90 @@
 # GitlabMrRelease
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gitlab_mr_release`. To experiment with that code, run `bin/console` for an interactive prompt.
+Release MergeRequest generator for [GitLab](https://about.gitlab.com/)
 
-TODO: Delete this and the text above, and describe your gem
-
+[![Gem Version](https://badge.fury.io/rb/gitlab_mr_release.svg)](https://badge.fury.io/rb/gitlab_mr_release)
 [![Build Status](https://travis-ci.org/sue445/gitlab_mr_release.svg?branch=master)](https://travis-ci.org/sue445/gitlab_mr_release)
 [![Code Climate](https://codeclimate.com/github/sue445/gitlab_mr_release/badges/gpa.svg)](https://codeclimate.com/github/sue445/gitlab_mr_release)
 [![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 [![Dependency Status](https://gemnasium.com/sue445/gitlab_mr_release.svg)](https://gemnasium.com/sue445/gitlab_mr_release)
 
+## Requirements
+
+* Ruby v2.1+
+* GitLab v7.11.0+
+
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'gitlab_mr_release'
+```
+$ gem install gitlab_mr_release
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install gitlab_mr_release
-
 ## Usage
+### init
 
-TODO: Write usage instructions here
+Copy setting files. And edit these files.
+
+```sh
+$ gitlab_mr_release init
+      create  .env.gitlab
+      create  gitlab_mr_release.md.erb
+```
+
+### create
+```sh
+$ gitlab_mr_release create --source=develop --target=master
+MergeRequst is created: http://example.com/your/project/merge_requests/10
+```
+
+description is accepetd MergeRequests between `--source` and `--target`
+
+![merge_request](img/merge_request.png)
+
+detail
+
+```sh
+$ gitlab_mr_release help create
+Usage:
+  gitlab_mr_release create -s, --source=SOURCE -t, --target=TARGET
+
+Options:
+  -s, --source=SOURCE  # Source branch (e.g. develop)
+  -t, --target=TARGET  # Target branch (e.g. master)
+      [--title=TITLE]  # MergeRequest title (default. 'Release :source -> :target')
+
+Create merge requrst
+```
+
+## ProTip
+### .env.gitlab
+Environment variables read from `~/.env.gitlab` and current `.env.gitlab`
+
+`~/.env.gitlab` 
+
+```
+GITLAB_API_ENDPOINT=http://example.com/api/v3
+GITLAB_API_PRIVATE_TOKEN=XXXXXXXXXXXXXXXXXXX
+TEMPLATE_FILE=gitlab_mr_release.md.erb
+```
+
+current `.env.gitlab`
+
+```
+GITLAB_PROJECT_NAME=group/name
+TEMPLATE_FILE=gitlab_mr_release.md.erb
+```
+
+If defined both `~/.env.gitlab` and current `.env.gitlab`, current `.env.gitlab` is priority
+
+### variables in template
+```markdown
+# MergeRequests
+<% merge_requests.each do |mr| %>
+* [ ] !<%= mr.iid %> <%= mr.title %>
+<% end %>
+```
+
+`merge_requests` is array of [MergeRequest](https://github.com/gitlabhq/gitlabhq/blob/master/doc/api/merge_requests.md#get-single-mr)
 
 ## Development
 
@@ -37,7 +94,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/gitlab_mr_release.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sue445/gitlab_mr_release.
 
 
 ## License
