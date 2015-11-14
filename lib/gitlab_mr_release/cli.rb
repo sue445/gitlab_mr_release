@@ -35,6 +35,8 @@ module GitlabMrRelease
     option :target, aliases: "-t", required: true, desc: "Target branch (e.g. master)"
     option :title,  desc: "MergeRequest title (default. 'Release :source -> :target')"
     def create
+      Dotenv.load(*GITLAB_ENV_FILES)
+
       title = options[:title] || default_title
 
       template =
