@@ -4,6 +4,8 @@ require "dotenv"
 
 module GitlabMrRelease
   class CLI < Thor
+    include Thor::Actions
+
     GITLAB_ENV_FILES = %w(.env.gitlab ~/.env.gitlab)
 
     DEFAULT_TEMPLATE = <<-MARKDOWN
@@ -13,8 +15,19 @@ module GitlabMrRelease
 <% end %>
     MARKDOWN
 
+    def self.source_root
+      "#{__dir__}/../templates"
+    end
+
+    desc "version", "Show gitlab_mr_release version"
     def version
       puts GitlabMrRelease::VERSION
+    end
+
+    desc "init", "Copy setting files to current directory"
+    def init
+      copy_file ".env.gitlab", ".env.gitlab"
+      copy_file "gitlab_mr_release.md.erb", "gitlab_mr_release.md.erb"
     end
 
     desc "create", "Create merge requrst"
