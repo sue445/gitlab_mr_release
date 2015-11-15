@@ -8,6 +8,8 @@ Release MergeRequest generator for [GitLab](https://about.gitlab.com/)
 [![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 [![Dependency Status](https://gemnasium.com/sue445/gitlab_mr_release.svg)](https://gemnasium.com/sue445/gitlab_mr_release)
 
+This is inspired by the [git-pr-release](https://github.com/motemen/git-pr-release)
+
 ## Requirements
 
 * Ruby v2.1+
@@ -40,9 +42,9 @@ MergeRequest is created
 [Description]
 # MergeRequests
 
-* [ ] !7 Add fresh
+* [ ] !7 Add fresh @sue445
 
-[Url] http://example.com/your/project/merge_requests/10
+[Url] http://example.com/your/project/merge_requests/15
 ```
 
 description is accepted MergeRequests title between `--source` and `--target`

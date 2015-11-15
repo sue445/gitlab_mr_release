@@ -43,7 +43,7 @@ describe GitlabMrRelease::Project do
       <<-MARKDNWN.strip_heredoc
       # MergeRequests
       <% merge_requests.each do |mr| %>
-      * [ ] !<%= mr.iid %> <%= mr.title %>
+      * [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
       <% end %>
       MARKDNWN
     end
@@ -52,7 +52,7 @@ describe GitlabMrRelease::Project do
       <<-MARKDNWN.strip_heredoc.strip
       # MergeRequests
 
-      * [ ] !5 Add yes
+      * [ ] !5 Add yes @sue445
       MARKDNWN
     end
 
