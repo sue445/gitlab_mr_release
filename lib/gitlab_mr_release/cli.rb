@@ -82,10 +82,7 @@ MergeRequest is created
     private
 
     def assert_env(name)
-      unless ENV[name]
-        puts "Error: Environment variable #{name} is required"
-        exit!
-      end
+      raise "Error: Environment variable #{name} is required" unless ENV[name]
     end
 
     def default_title
