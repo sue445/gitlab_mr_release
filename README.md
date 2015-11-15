@@ -33,10 +33,19 @@ $ gitlab_mr_release init
 ### create
 ```sh
 $ gitlab_mr_release create --source=develop --target=master
-MergeRequst is created: http://example.com/your/project/merge_requests/10
+MergeRequest is created
+
+[Title] Release develop -> master
+
+[Description]
+# MergeRequests
+
+* [ ] !7 Add fresh
+
+[Url] http://example.com/your/project/merge_requests/10
 ```
 
-description is accepetd MergeRequests between `--source` and `--target`
+description is accepted MergeRequests title between `--source` and `--target`
 
 ![merge_request](img/merge_request.png)
 

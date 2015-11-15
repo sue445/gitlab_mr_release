@@ -64,16 +64,25 @@ module GitlabMrRelease
       )
 
       mr_url = "#{project.web_url}/merge_requests/#{mr.iid}"
-      puts "MergeRequst is created: #{mr_url}"
+
+      message = <<-EOS
+MergeRequest is created
+
+[Title] #{mr.title}
+
+[Description]
+#{mr.description}
+
+[Url] #{mr_url}
+      EOS
+
+      puts message
     end
 
     private
 
     def assert_env(name)
-      unless ENV[name]
-        puts "Error: Environment variable #{name} is required"
-        exit!
-      end
+      raise "Error: Environment variable #{name} is required" unless ENV[name]
     end
 
     def default_title

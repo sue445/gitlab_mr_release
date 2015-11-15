@@ -15,15 +15,14 @@ if ENV["CI"]
 end
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'gitlab_mr_release'
+require "gitlab_mr_release"
+require "gitlab_mr_release/cli"
 require "webmock"
 require "dotenv"
 require "webmock/rspec"
 require "active_support/all"
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
-
-Dotenv.load(".env.gitlab", "~/.env.gitlab")
 
 def spec_dir
   Pathname(__dir__)
@@ -128,6 +127,7 @@ RSpec.configure do |config|
   config.include StubHelper
 
   config.before :each do
+    allow(Dotenv).to receive(:load)
     WebMock.disable_net_connect!(allow: "codeclimate.com")
   end
 end

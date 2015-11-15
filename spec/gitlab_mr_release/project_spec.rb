@@ -49,11 +49,10 @@ describe GitlabMrRelease::Project do
     end
 
     let(:description) do
-      <<-MARKDNWN.strip_heredoc
+      <<-MARKDNWN.strip_heredoc.strip
       # MergeRequests
 
       * [ ] !5 Add yes
-
       MARKDNWN
     end
 
