@@ -8,6 +8,8 @@ Release MergeRequest generator for [GitLab](https://about.gitlab.com/)
 [![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 [![Dependency Status](https://gemnasium.com/sue445/gitlab_mr_release.svg)](https://gemnasium.com/sue445/gitlab_mr_release)
 
+This is inspired by the [git-pr-release](https://github.com/motemen/git-pr-release)
+
 ## Requirements
 
 * Ruby v2.1+
