@@ -11,7 +11,7 @@ module GitlabMrRelease
     DEFAULT_TEMPLATE = <<-MARKDOWN
 # MergeRequests
 <% merge_requests.each do |mr| %>
-* [ ] !<%= mr.iid %> <%= mr.title %>
+* [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
 <% end %>
     MARKDOWN
 

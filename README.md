@@ -40,9 +40,9 @@ MergeRequest is created
 [Description]
 # MergeRequests
 
-* [ ] !7 Add fresh
+* [ ] !7 Add fresh @sue445
 
-[Url] http://example.com/your/project/merge_requests/10
+[Url] http://example.com/your/project/merge_requests/15
 ```
 
 description is accepted MergeRequests title between `--source` and `--target`
