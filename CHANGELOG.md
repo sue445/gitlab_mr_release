@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/rubicure/compare/v0.1.0...master)
+[full changelog](http://github.com/sue445/rubicure/compare/v0.1.1...master)
+
+## v0.1.1
+[full changelog](http://github.com/sue445/rubicure/compare/v0.1.0...v0.1.1)
+
+* Enable ERB trim_mode `"-"` (i.g. `<%-` , `-%>`) and tweak default template #10
+  * https://github.com/sue445/gitlab_mr_release/pull/10
 
 ## v0.1.0
 * First release
