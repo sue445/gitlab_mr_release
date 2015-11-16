@@ -21,6 +21,7 @@ require "webmock"
 require "dotenv"
 require "webmock/rspec"
 require "active_support/all"
+require "pry"
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 

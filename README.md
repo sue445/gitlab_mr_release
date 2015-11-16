@@ -90,9 +90,9 @@ If defined both `~/.env.gitlab` and current `.env.gitlab`, current `.env.gitlab`
 ### variables in template
 ```markdown
 # MergeRequests
-<% merge_requests.each do |mr| %>
+<% merge_requests.each do |mr| -%>
 * [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
-<% end %>
+<% end -%>
 ```
 
 `merge_requests` is array of [MergeRequest](https://github.com/gitlabhq/gitlabhq/blob/master/doc/api/merge_requests.md#get-single-mr)
