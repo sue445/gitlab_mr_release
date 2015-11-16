@@ -8,13 +8,6 @@ module GitlabMrRelease
 
     GITLAB_ENV_FILES = %w(.env.gitlab ~/.env.gitlab)
 
-    DEFAULT_TEMPLATE = <<-MARKDOWN
-# MergeRequests
-<% merge_requests.each do |mr| %>
-* [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
-<% end %>
-    MARKDOWN
-
     def self.source_root
       "#{__dir__}/../templates"
     end
@@ -43,12 +36,7 @@ module GitlabMrRelease
 
       title = options[:title] || default_title
 
-      template =
-        if ENV["TEMPLATE_FILE"]
-          File.read(ENV["TEMPLATE_FILE"])
-        else
-          DEFAULT_TEMPLATE
-        end
+      template = File.read(template_file)
 
       project = GitlabMrRelease::Project.new(
         api_endpoint:  ENV["GITLAB_API_ENDPOINT"],
@@ -87,6 +75,10 @@ MergeRequest is created
 
     def default_title
       "Release #{options[:source]} -> #{options[:target]}"
+    end
+
+    def template_file
+      ENV["TEMPLATE_FILE"] || "#{__dir__}/../templates/gitlab_mr_release.md.erb"
     end
   end
 end
