@@ -42,18 +42,16 @@ describe GitlabMrRelease::Project do
     let(:template) do
       <<-MARKDNWN.strip_heredoc
       # MergeRequests
-      <% merge_requests.each do |mr| %>
+      <% merge_requests.each do |mr| -%>
       * [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
-      <% end %>
+      <% end -%>
       MARKDNWN
     end
 
     let(:description) do
       <<-MARKDNWN.strip_heredoc.strip
       # MergeRequests
-
       * [ ] !5 Add yes @sue445
-
       * [ ] !6 Add gogo @sue445
       MARKDNWN
     end
