@@ -37,7 +37,7 @@ describe GitlabMrRelease::Project do
   describe "#generate_description" do
     subject { project.generate_description(iids, template) }
 
-    let(:iids) { [5] }
+    let(:iids) { [5, 6] }
 
     let(:template) do
       <<-MARKDNWN.strip_heredoc
@@ -53,6 +53,8 @@ describe GitlabMrRelease::Project do
       # MergeRequests
 
       * [ ] !5 Add yes @sue445
+
+      * [ ] !6 Add gogo @sue445
       MARKDNWN
     end
 
@@ -60,6 +62,10 @@ describe GitlabMrRelease::Project do
       stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=5").
         with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
         to_return(status: 200, body: read_stub("merge_requests_with_iid_5.json"), headers: {})
+
+      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=6").
+        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+        to_return(status: 200, body: read_stub("merge_requests_with_iid_6.json"), headers: {})
     end
 
     it { should eq description }
