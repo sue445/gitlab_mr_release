@@ -76,6 +76,7 @@ Environment variables read from `~/.env.gitlab` and current `.env.gitlab`
 GITLAB_API_ENDPOINT=http://example.com/api/v3
 GITLAB_API_PRIVATE_TOKEN=XXXXXXXXXXXXXXXXXXX
 TEMPLATE_FILE=gitlab_mr_release.md.erb
+DEFAULT_TITLE=Release <%= Time.now %> <%= source_branch %> -> <%= target_branch %>
 ```
 
 current `.env.gitlab`
@@ -96,6 +97,17 @@ If defined both `~/.env.gitlab` and current `.env.gitlab`, current `.env.gitlab`
 ```
 
 `merge_requests` is array of [MergeRequest](https://github.com/gitlabhq/gitlabhq/blob/master/doc/api/merge_requests.md#get-single-mr)
+
+### variables in DEFAULT_TITLE
+```sh
+DEFAULT_TITLE=Release <%= Time.now %> <%= source_branch %> -> <%= target_branch %>
+```
+
+`DEFAULT_TITLE` supports erb.
+
+* `source_branch` is `--source` in commandline args
+* `target_branch` is `--target` in commandline args
+
 
 ## Development
 
