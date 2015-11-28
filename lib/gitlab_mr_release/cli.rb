@@ -36,8 +36,6 @@ module GitlabMrRelease
       assert_env("GITLAB_API_PRIVATE_TOKEN")
       assert_env("GITLAB_PROJECT_NAME")
 
-      title = options[:title] || default_title
-
       template = File.read(template_file)
 
       project = GitlabMrRelease::Project.new(
@@ -49,7 +47,7 @@ module GitlabMrRelease
       mr = project.create_merge_request(
         source_branch: options[:source],
         target_branch: options[:target],
-        title:         title,
+        title:         generate_title,
         template:      template,
       )
 
@@ -80,8 +78,14 @@ MergeRequest is created
       raise "Error: Environment variable #{name} is required" unless ENV[name]
     end
 
-    def default_title
-      "Release #{options[:source]} -> #{options[:target]}"
+    def generate_title
+      return options[:title] if options[:title]
+
+      generate_default_title(
+        title_template: ENV["DEFAULT_TITLE"],
+        source_branch:  options[:source],
+        target_branch:  options[:target],
+      )
     end
 
     def template_file
