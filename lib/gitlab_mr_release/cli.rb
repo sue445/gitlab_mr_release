@@ -67,11 +67,6 @@ MergeRequest is created
       puts message
     end
 
-    def generate_default_title(title_template:, source_branch:, target_branch:)
-      title_template ||= DEFAULT_TITLE_TEMPLATE
-      ERB.new(title_template).result(binding).strip
-    end
-
     private
 
     def assert_env(name)
@@ -86,6 +81,11 @@ MergeRequest is created
         source_branch:  options[:source],
         target_branch:  options[:target],
       )
+    end
+
+    def generate_default_title(title_template:, source_branch:, target_branch:)
+      title_template ||= DEFAULT_TITLE_TEMPLATE
+      ERB.new(title_template).result(binding).strip
     end
 
     def template_file

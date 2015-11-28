@@ -35,7 +35,7 @@ describe GitlabMrRelease::CLI do
   end
 
   describe "#generate_default_title" do
-    subject { cli.generate_default_title(title_template: title_template, source_branch: source_branch, target_branch: target_branch) }
+    subject { cli.send(:generate_default_title, title_template: title_template, source_branch: source_branch, target_branch: target_branch) }
 
     let(:title_template) { "Release <%= source_branch %> -> <%= target_branch %>" }
     let(:source_branch) { "develop" }
