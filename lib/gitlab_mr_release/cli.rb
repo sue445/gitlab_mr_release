@@ -8,6 +8,8 @@ module GitlabMrRelease
 
     GITLAB_ENV_FILES = %w(.env.gitlab ~/.env.gitlab)
 
+    DEFAULT_TITLE_TEMPLATE = "Release <%= Time.now %> <%= source_branch %> -> <%= target_branch %>"
+
     def self.source_root
       "#{__dir__}/../templates"
     end
@@ -65,6 +67,11 @@ MergeRequest is created
       EOS
 
       puts message
+    end
+
+    def generate_default_title(title_template:, source_branch:, target_branch:)
+      title_template ||= DEFAULT_TITLE_TEMPLATE
+      ERB.new(title_template).result(binding).strip
     end
 
     private

@@ -1,7 +1,9 @@
 describe GitlabMrRelease::CLI do
+  let(:cli) { GitlabMrRelease::CLI.new }
+
   describe "#create" do
     subject do
-      GitlabMrRelease::CLI.new.invoke(
+      cli.invoke(
         :create,
         [],
         {
@@ -30,5 +32,15 @@ describe GitlabMrRelease::CLI do
     end
 
     it { expect { subject }.not_to raise_error  }
+  end
+
+  describe "#generate_default_title" do
+    subject { cli.generate_default_title(title_template: title_template, source_branch: source_branch, target_branch: target_branch) }
+
+    let(:title_template) { "Release <%= source_branch %> -> <%= target_branch %>" }
+    let(:source_branch) { "develop" }
+    let(:target_branch) { "master" }
+
+    it { should eq "Release develop -> master" }
   end
 end
