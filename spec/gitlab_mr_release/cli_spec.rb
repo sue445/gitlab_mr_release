@@ -9,12 +9,14 @@ describe GitlabMrRelease::CLI do
         {
           source: source,
           target: target,
+          labels: labels.join(","),
         }
       )
     end
 
     let(:source)      { "develop" }
     let(:target)      { "master" }
+    let(:labels)      { %w(label1 label2) }
     let(:description) { "# MergeRequests"}
 
     let(:merge_request) do
@@ -22,6 +24,7 @@ describe GitlabMrRelease::CLI do
         iid:         1,
         title:       "Release develop -> master",
         description: description,
+        labels:      labels,
       )
     end
 
