@@ -32,6 +32,8 @@ $ gitlab_mr_release init
       create  gitlab_mr_release.md.erb
 ```
 
+see [lib/templates/](lib/templates/)
+
 ### create
 ```sh
 $ gitlab_mr_release create --source=develop --target=master --labels=release
@@ -85,6 +87,9 @@ current `.env.gitlab`
 ```
 GITLAB_PROJECT_NAME=group/name
 TEMPLATE_FILE=gitlab_mr_release.md.erb
+DEFAULT_SOURCE_BRANCH=develop
+DEFAULT_TARGET_BRANCH=master
+DEFAULT_LABELS=release
 ```
 
 If defined both `~/.env.gitlab` and current `.env.gitlab`, current `.env.gitlab` is priority
