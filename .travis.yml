@@ -1,8 +1,8 @@
 language: ruby
 rvm:
 - 2.1
-- 2.2
-- 2.3
+- 2.2.5
+- 2.3.1
 - ruby-head
 cache: bundler
 sudo: false
@@ -22,4 +22,3 @@ notifications:
 matrix:
   allow_failures:
   - rvm: ruby-head
-  - rvm: 2.3
