@@ -34,7 +34,7 @@ $ gitlab_mr_release init
 
 ### create
 ```sh
-$ gitlab_mr_release create --source=develop --target=master
+$ gitlab_mr_release create --source=develop --target=master --labels=release
 MergeRequest is created
 
 [Title] Release develop -> master
@@ -62,6 +62,7 @@ Options:
   -s, --source=SOURCE  # Source branch (e.g. develop)
   -t, --target=TARGET  # Target branch (e.g. master)
       [--title=TITLE]  # MergeRequest title (default. 'Release :source -> :target')
+  -l, [--labels=LABELS]  # Labels for MR as a comma-separated list (e.g. 'label1,label2')
 
 Create merge requrst
 ```

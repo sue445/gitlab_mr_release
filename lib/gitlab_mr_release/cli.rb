@@ -29,6 +29,7 @@ module GitlabMrRelease
     option :source, aliases: "-s", required: true, desc: "Source branch (e.g. develop)"
     option :target, aliases: "-t", required: true, desc: "Target branch (e.g. master)"
     option :title,  desc: "MergeRequest title (default. 'Release :source -> :target')"
+    option :labels, aliases: "-l", desc: "Labels for MR as a comma-separated list  (e.g. 'label1,label2')"
     def create
       Dotenv.load(*GITLAB_ENV_FILES)
 
@@ -47,6 +48,7 @@ module GitlabMrRelease
       mr = project.create_merge_request(
         source_branch: options[:source],
         target_branch: options[:target],
+        labels:        options[:labels],
         title:         generate_title,
         template:      template,
       )
