@@ -32,6 +32,8 @@ $ gitlab_mr_release init
       create  gitlab_mr_release.md.erb
 ```
 
+see [lib/templates/](lib/templates/)
+
 ### create
 ```sh
 $ gitlab_mr_release create --source=develop --target=master --labels=release
@@ -56,13 +58,13 @@ detail
 ```sh
 $ gitlab_mr_release help create
 Usage:
-  gitlab_mr_release create -s, --source=SOURCE -t, --target=TARGET
+  gitlab_mr_release create
 
 Options:
-  -s, --source=SOURCE  # Source branch (e.g. develop)
-  -t, --target=TARGET  # Target branch (e.g. master)
-      [--title=TITLE]  # MergeRequest title (default. 'Release :source -> :target')
-  -l, [--labels=LABELS]  # Labels for MR as a comma-separated list (e.g. 'label1,label2')
+  -s, [--source=SOURCE]  # Source branch (e.g. develop)
+  -t, [--target=TARGET]  # Target branch (e.g. master)
+      [--title=TITLE]    # MergeRequest title (default. 'Release :source -> :target')
+  -l, [--labels=LABELS]  # Labels for MR as a comma-separated list  (e.g. 'label1,label2')
 
 Create merge requrst
 ```
@@ -85,6 +87,9 @@ current `.env.gitlab`
 ```
 GITLAB_PROJECT_NAME=group/name
 TEMPLATE_FILE=gitlab_mr_release.md.erb
+DEFAULT_SOURCE_BRANCH=develop
+DEFAULT_TARGET_BRANCH=master
+DEFAULT_LABELS=release
 ```
 
 If defined both `~/.env.gitlab` and current `.env.gitlab`, current `.env.gitlab` is priority
