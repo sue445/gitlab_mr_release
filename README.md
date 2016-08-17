@@ -53,7 +53,7 @@ description is accepted MergeRequests title between `--source` and `--target`
 
 ![merge_request](img/merge_request.png)
 
-detail
+#### detail
 
 ```sh
 $ gitlab_mr_release help create
@@ -63,11 +63,23 @@ Usage:
 Options:
   -s, [--source=SOURCE]  # Source branch (e.g. develop)
   -t, [--target=TARGET]  # Target branch (e.g. master)
-      [--title=TITLE]    # MergeRequest title (default. 'Release :source -> :target')
+      [--title=TITLE]    # MergeRequest title (default. 'Release :timestamp :source -> :target')
   -l, [--labels=LABELS]  # Labels for MR as a comma-separated list  (e.g. 'label1,label2')
 
 Create merge requrst
 ```
+
+#### options
+Some options can be specified in both the command arguments and environment variables
+
+* `--source` , `DEFAULT_SOURCE_BRANCH` **(either one is required)**
+  * Source branch (e.g. `develop`)
+* `--target` , `DEFAULT_TARGET_BRANCH` **(either one is required)**
+  * Target branch (e.g. `master`)
+* `--title`
+  * MergeRequest title (default. 'Release :timestamp :source -> :target')
+* `--labels` , `DEFAULT_LABELS`
+  * Labels for MR as a comma-separated list (e.g. `label1,label2`, default. no labels)
 
 ## ProTip
 ### .env.gitlab
@@ -111,8 +123,8 @@ DEFAULT_TITLE=Release <%= Time.now %> <%= source_branch %> -> <%= target_branch 
 
 `DEFAULT_TITLE` supports erb.
 
-* `source_branch` is `--source` in commandline args
-* `target_branch` is `--target` in commandline args
+* `source_branch` is `--source` or `DEFAULT_SOURCE_BRANCH`
+* `target_branch` is `--target` in `DEFAULT_TARGET_BRANCH`
 
 
 ## Development
