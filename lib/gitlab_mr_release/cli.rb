@@ -28,7 +28,7 @@ module GitlabMrRelease
     desc "create", "Create merge requrst"
     option :source, aliases: "-s", desc: "Source branch (e.g. develop)"
     option :target, aliases: "-t", desc: "Target branch (e.g. master)"
-    option :title,  desc: "MergeRequest title (default. 'Release :source -> :target')"
+    option :title,  desc: "MergeRequest title (default. 'Release :timestamp :source -> :target')"
     option :labels, aliases: "-l", desc: "Labels for MR as a comma-separated list  (e.g. 'label1,label2')"
     def create
       Dotenv.load(*GITLAB_ENV_FILES)

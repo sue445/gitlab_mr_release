@@ -63,7 +63,7 @@ Usage:
 Options:
   -s, [--source=SOURCE]  # Source branch (e.g. develop)
   -t, [--target=TARGET]  # Target branch (e.g. master)
-      [--title=TITLE]    # MergeRequest title (default. 'Release :source -> :target')
+      [--title=TITLE]    # MergeRequest title (default. 'Release :timestamp :source -> :target')
   -l, [--labels=LABELS]  # Labels for MR as a comma-separated list  (e.g. 'label1,label2')
 
 Create merge requrst
