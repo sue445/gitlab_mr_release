@@ -1,6 +1,11 @@
 ## Unreleased
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.2.0...master)
 
+* Support MR labels
+  * https://github.com/sue445/gitlab_mr_release/pull/13
+* Support default params in .env.gitlab
+  * https://github.com/sue445/gitlab_mr_release/pull/14
+
 ## v0.2.0
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.1.1...v0.2.0)
 
