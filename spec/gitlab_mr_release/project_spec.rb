@@ -12,7 +12,7 @@ describe GitlabMrRelease::Project do
   let(:api_endpoint)         { "http://example.com/api/v3" }
   let(:private_token)        { "XXXXXXXXXXXXXXXXXXX" }
   let(:project_name)         { "group/name" }
-  let(:escaped_project_name) { "group%2Fname" }
+  let(:escaped_project_name) { "group%252Fname" }
   let(:web_url)              { "http://example.com/#{project_name}" }
 
   before do
