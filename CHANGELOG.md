@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.0...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.1...master)
+
+## v0.3.1
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.0...v0.3.1)
+
+* Fixed. can not call GitLab API using gitlab v4+
+  * https://github.com/sue445/gitlab_mr_release/pull/18
 
 ## v0.3.0
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.2.0...v0.3.0)
