@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "dotenv"
-  spec.add_dependency "gitlab"
+  spec.add_dependency "gitlab", ">= 4.0.0"
   spec.add_dependency "thor"
 
   spec.add_development_dependency "activesupport"
