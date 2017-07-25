@@ -88,7 +88,7 @@ Environment variables read from `~/.env.gitlab` and current `.env.gitlab`
 `~/.env.gitlab` 
 
 ```
-GITLAB_API_ENDPOINT=http://example.com/api/v3
+GITLAB_API_ENDPOINT=http://example.com/api/v4
 GITLAB_API_PRIVATE_TOKEN=XXXXXXXXXXXXXXXXXXX
 TEMPLATE_FILE=gitlab_mr_release.md.erb
 DEFAULT_TITLE=Release <%= Time.now %> <%= source_branch %> -> <%= target_branch %>
