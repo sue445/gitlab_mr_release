@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.1...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.4.0...master)
+
+## v0.4.0
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.1...v0.4.0)
+
+* Support GitLab API v4
+  * https://github.com/sue445/gitlab_mr_release/pull/19
 
 ## v0.3.1
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.0...v0.3.1)
