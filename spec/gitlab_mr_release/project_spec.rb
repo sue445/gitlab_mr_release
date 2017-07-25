@@ -9,7 +9,7 @@ describe GitlabMrRelease::Project do
     )
   end
 
-  let(:api_endpoint)         { "http://example.com/api/v3" }
+  let(:api_endpoint)         { "http://example.com/api/v4" }
   let(:private_token)        { "XXXXXXXXXXXXXXXXXXX" }
   let(:project_name)         { "group/name" }
   let(:escaped_project_name) { "group%2Fname" }
