@@ -10,6 +10,7 @@ module GitlabMrRelease
         config.endpoint      = api_endpoint
         config.private_token = private_token
       end
+      @api_endpoint = api_endpoint
       @project_name = project_name
     end
 
@@ -31,9 +32,15 @@ module GitlabMrRelease
 
     # find MergeRequest with iid
     def merge_request(iid)
-      mr = Gitlab.merge_requests(@project_name, iid: iid).first
-      assert_merge_request_iid(mr, iid) if mr
-      mr
+      if api_v4?
+        # API v4
+        Gitlab.merge_request(@project_name, iid)
+      else
+        # API v3
+        mr = Gitlab.merge_requests(@project_name, iid: iid).first
+        assert_merge_request_iid(mr, iid) if mr
+        mr
+      end
     end
 
     def generate_description(iids, template)
@@ -57,6 +64,10 @@ module GitlabMrRelease
     def assert_merge_request_iid(mr, iid)
       # NOTE: MR is found, but server is old GitLab?
       raise "MergeRequest iid does not match (expected #{iid}, but #{mr.iid})" unless iid == mr.iid
+    end
+
+    def api_v4?
+      @api_endpoint =~ %r(/api/v4/?)
     end
   end
 end

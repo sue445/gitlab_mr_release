@@ -56,16 +56,36 @@ describe GitlabMrRelease::Project do
       MARKDNWN
     end
 
-    before do
-      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=5").
-        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
-        to_return(status: 200, body: read_stub("merge_requests_with_iid_5.json"), headers: {})
+    context "When API v3" do
+      let(:api_endpoint) { "http://example.com/api/v3" }
 
-      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=6").
-        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
-        to_return(status: 200, body: read_stub("merge_requests_with_iid_6.json"), headers: {})
+      before do
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=5").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("merge_requests_with_iid_5.json"), headers: {})
+
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iid=6").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("merge_requests_with_iid_6.json"), headers: {})
+      end
+
+      it { should eq description }
     end
 
-    it { should eq description }
+    context "When API v4" do
+      let(:api_endpoint) { "http://example.com/api/v4" }
+
+      before do
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests/5").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("merge_request_5.json"), headers: {})
+
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests/6").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("merge_request_6.json"), headers: {})
+      end
+
+      it { should eq description }
+    end
   end
 end
