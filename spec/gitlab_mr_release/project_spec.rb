@@ -76,13 +76,9 @@ describe GitlabMrRelease::Project do
     let(:api_endpoint) { "http://example.com/api/v4" }
 
     before do
-      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests/5").
+      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?iids[]=5&iids[]=6").
         with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
-        to_return(status: 200, body: read_stub("merge_request_5.json"), headers: {})
-
-      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests/6").
-        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
-        to_return(status: 200, body: read_stub("merge_request_6.json"), headers: {})
+        to_return(status: 200, body: read_stub("merge_requests_with_iids_5_and_6.json"), headers: {})
     end
 
     it { should eq description }

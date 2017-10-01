@@ -35,13 +35,8 @@ module GitlabMrRelease
       end.compact.map(&:to_i)
     end
 
-    # find MergeRequest with iid
-    def merge_request(iid)
-      Gitlab.merge_request(@project_name, iid)
-    end
-
     def generate_description(iids, template)
-      merge_requests = iids.map { |iid| merge_request(iid) }
+      merge_requests = Gitlab.merge_requests(@project_name, iids: iids)
       ERB.new(template, nil, "-").result(binding).strip
     end
 
