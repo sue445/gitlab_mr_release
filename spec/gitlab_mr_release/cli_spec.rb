@@ -14,6 +14,22 @@ describe GitlabMrRelease::CLI do
       )
     end
 
+    before do
+      allow(Dotenv).to receive(:load)
+      stub_const("ENV", env)
+    end
+
+    let(:env) do
+      {
+        "GITLAB_API_ENDPOINT"      => gitlab_api_envpoint,
+        "GITLAB_API_PRIVATE_TOKEN" => gitlab_api_private_token,
+        "GITLAB_PROJECT_NAME"      => gitlab_project_name,
+      }
+    end
+    let(:gitlab_api_envpoint)      { "http://example.com/api/v4" }
+    let(:gitlab_api_private_token) { "XXXXXXXXXXXXXXXXXXX" }
+    let(:gitlab_project_name)      { "group/name" }
+
     let(:source)      { "develop" }
     let(:target)      { "master" }
     let(:labels)      { %w(label1 label2) }
