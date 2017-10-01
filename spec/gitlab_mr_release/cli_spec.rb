@@ -33,24 +33,33 @@ describe GitlabMrRelease::CLI do
     let(:source)      { "develop" }
     let(:target)      { "master" }
     let(:labels)      { %w(label1 label2) }
-    let(:description) { "# MergeRequests"}
 
-    let(:merge_request) do
-      OpenStruct.new(
-        iid:         1,
-        title:       "Release develop -> master",
-        description: description,
-        labels:      labels,
-      )
+    context "When valid api version" do
+      let(:description) { "# MergeRequests"}
+
+      let(:merge_request) do
+        OpenStruct.new(
+          iid:         1,
+          title:       "Release develop -> master",
+          description: description,
+          labels:      labels,
+        )
+      end
+
+      before do
+        allow_any_instance_of(GitlabMrRelease::CLI).to receive(:assert_env)
+        allow_any_instance_of(GitlabMrRelease::Project).to receive(:create_merge_request){ merge_request }
+        allow_any_instance_of(GitlabMrRelease::Project).to receive(:web_url){ "http://example.com/your/project" }
+      end
+
+      it { expect { subject }.not_to raise_error  }
     end
 
-    before do
-      allow_any_instance_of(GitlabMrRelease::CLI).to receive(:assert_env)
-      allow_any_instance_of(GitlabMrRelease::Project).to receive(:create_merge_request){ merge_request }
-      allow_any_instance_of(GitlabMrRelease::Project).to receive(:web_url){ "http://example.com/your/project" }
-    end
+    context "When invalid api version" do
+      let(:gitlab_api_envpoint) { "http://example.com/api/v3" }
 
-    it { expect { subject }.not_to raise_error  }
+      it { expect { subject }.to raise_error GitlabMrRelease::InvalidApiVersionError }
+    end
   end
 
   describe "#generate_default_title" do
