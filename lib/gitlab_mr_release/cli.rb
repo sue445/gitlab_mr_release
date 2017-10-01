@@ -48,6 +48,10 @@ module GitlabMrRelease
         project_name:  ENV["GITLAB_PROJECT_NAME"],
       )
 
+      unless project.api_version >= 4
+        raise InvalidApiVersionError, "'#{ENV["GITLAB_API_ENDPOINT"]}' seems not to be GitLab API v4+. gitlab_mr_release requires GitLab API v4+"
+      end
+
       mr = project.create_merge_request(
         source_branch: source_branch,
         target_branch: target_branch,
