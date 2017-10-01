@@ -1,0 +1,58 @@
+[
+  {
+    "id": 165679,
+    "iid": 5,
+    "project_id": 499527,
+    "title": "Add yes",
+    "description": "",
+    "state": "merged",
+    "created_at": "2015-09-30T16:26:45.134Z",
+    "updated_at": "2015-09-30T16:27:00.900Z",
+    "target_branch": "master",
+    "source_branch": "feature/yes",
+    "upvotes": 0,
+    "downvotes": 0,
+    "author": {
+      "name": "sue445",
+      "username": "sue445",
+      "id": 125864,
+      "state": "active",
+      "avatar_url": "https://secure.gravatar.com/avatar/fbf625a9c371d2d87fe0d4343b68dc65?s=40&d=identicon",
+      "web_url": "https://gitlab.com/u/sue445"
+    },
+    "assignee": null,
+    "source_project_id": 499527,
+    "target_project_id": 499527,
+    "labels": [],
+    "work_in_progress": null,
+    "milestone": null
+  },
+  {
+    "id": 165683,
+    "iid": 6,
+    "project_id": 499527,
+    "title": "Add gogo",
+    "description": "",
+    "state": "merged",
+    "created_at": "2015-09-30T16:28:46.847Z",
+    "updated_at": "2015-09-30T16:28:54.036Z",
+    "target_branch": "master",
+    "source_branch": "feature/gogo",
+    "upvotes": 0,
+    "downvotes": 0,
+    "author": {
+      "name": "sue445",
+      "username": "sue445",
+      "id": 125864,
+      "state": "active",
+      "avatar_url": "https://secure.gravatar.com/avatar/fbf625a9c371d2d87fe0d4343b68dc65?s=40&d=identicon",
+      "web_url": "https://gitlab.com/u/sue445"
+    },
+    "assignee": null,
+    "source_project_id": 499527,
+    "target_project_id": 499527,
+    "labels": [],
+    "work_in_progress": false,
+    "milestone": null
+  }
+]
