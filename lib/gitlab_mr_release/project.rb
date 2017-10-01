@@ -55,12 +55,5 @@ module GitlabMrRelease
       }
       Gitlab.create_merge_request(@project_name, title, options)
     end
-
-    private
-
-    def assert_merge_request_iid(mr, iid)
-      # NOTE: MR is found, but server is old GitLab?
-      raise "MergeRequest iid does not match (expected #{iid}, but #{mr.iid})" unless iid == mr.iid
-    end
   end
 end
