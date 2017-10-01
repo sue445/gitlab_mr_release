@@ -14,6 +14,11 @@ module GitlabMrRelease
       @project_name = project_name
     end
 
+    def api_version
+      @api_endpoint =~ %r(/api/v([0-9]+)/?)
+      $1.to_i
+    end
+
     def web_url
       @web_url ||= Gitlab.project(@project_name).web_url
     end

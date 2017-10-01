@@ -19,6 +19,23 @@ describe GitlabMrRelease::Project do
     allow(project).to receive(:web_url) { web_url }
   end
 
+  describe "#api_version" do
+    subject { project.api_version }
+
+    using RSpec::Parameterized::TableSyntax
+
+    where(:api_endpoint, :expected) do
+      "http://example.com/api/v4/" | 4
+      "http://example.com/api/v4"  | 4
+      "http://example.com/api/v3/" | 3
+      "http://example.com/"        | 0
+    end
+
+    with_them do
+      it { should eq expected }
+    end
+  end
+
   describe "#merge_request_iids_between" do
     subject { project.merge_request_iids_between(from, to) }
 
