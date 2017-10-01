@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec-parameterized"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "webmock", ">= 3.0.0"
 end
