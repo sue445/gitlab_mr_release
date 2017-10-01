@@ -1,5 +1,13 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.4.0...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.0.0...master)
+
+## v1.0.0
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.4.0...v1.0.0)
+
+* Drop GitLab API v3 supports
+  * https://github.com/sue445/gitlab_mr_release/pull/21
+* Reduced API calls at `gitlab_mr_release create`
+  * https://github.com/sue445/gitlab_mr_release/pull/23
 
 ## v0.4.0
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v0.3.1...v0.4.0)
