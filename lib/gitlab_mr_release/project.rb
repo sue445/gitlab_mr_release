@@ -30,7 +30,7 @@ module GitlabMrRelease
     def merge_request_iids_between(from, to)
       commits = Gitlab.repo_compare(@project_name, from, to).commits
       commits.map do |commit|
-        commit["message"] =~ /^Merge branch .*See merge request \!(\d+)$/m
+        commit["message"] =~ /^Merge branch .*See merge request .*\!(\d+)$/m
         $1
       end.compact.map(&:to_i)
     end

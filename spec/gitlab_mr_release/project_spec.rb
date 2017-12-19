@@ -39,16 +39,31 @@ describe GitlabMrRelease::Project do
   describe "#merge_request_iids_between" do
     subject { project.merge_request_iids_between(from, to) }
 
-    before do
-      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/repository/compare?from=#{from}&to=#{to}").
-        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
-        to_return(status: 200, body: read_stub("repository_compare.json"), headers: {})
+    context "with gitlab v9 merge commits" do
+      before do
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/repository/compare?from=#{from}&to=#{to}").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("repository_compare.json"), headers: {})
+      end
+
+      let(:from) { "v0.0.2" }
+      let(:to)   { "v0.0.3" }
+
+      it { should contain_exactly(5, 6) }
     end
 
-    let(:from) { "v0.0.2" }
-    let(:to)   { "v0.0.3" }
+    context "with gitlab v9 and v10 merge commits" do
+      before do
+        stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/repository/compare?from=#{from}&to=#{to}").
+          with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+          to_return(status: 200, body: read_stub("repository_compare_with_v9_and_v10.json"), headers: {})
+      end
 
-    it { should contain_exactly(5, 6) }
+      let(:from) { "v0.0.3" }
+      let(:to)   { "v0.0.4" }
+
+      it { should contain_exactly(7, 28, 29) }
+    end
   end
 
   describe "#generate_description" do
