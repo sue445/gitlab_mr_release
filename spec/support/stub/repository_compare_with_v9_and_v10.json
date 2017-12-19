@@ -1,0 +1,179 @@
+{
+  "commit": {
+    "id": "96dc3dd5e44e73b9cbe1d01e0479c4cb65aa4020",
+    "short_id": "96dc3dd5",
+    "title": "Bump version",
+    "created_at": "2017-12-19T23:54:23.000+09:00",
+    "parent_ids": [
+      "d93c34c0ceece56bf7b64f71cec333940398a90c"
+    ],
+    "message": "Bump version\n",
+    "author_name": "sue445",
+    "author_email": "sue445@sue445.net",
+    "authored_date": "2017-12-19T23:54:23.000+09:00",
+    "committer_name": "sue445",
+    "committer_email": "sue445@sue445.net",
+    "committed_date": "2017-12-19T23:54:23.000+09:00"
+  },
+  "commits": [
+    {
+      "id": "f4648535ac0095b70903622ad656075d1ec94f35",
+      "short_id": "f4648535",
+      "title": "Add fresh",
+      "created_at": "2015-11-14T22:49:48.000+09:00",
+      "parent_ids": [
+        "17d7f1fc1c48ea243c30498074621e1d0b24ff9f"
+      ],
+      "message": "Add fresh\n",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2015-11-14T22:49:48.000+09:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2015-11-14T22:49:48.000+09:00"
+    },
+    {
+      "id": "4fe540bbeca53702937cf84852782ec0e7d06c9d",
+      "short_id": "4fe540bb",
+      "title": "Merge branch 'feature/fresh' into 'develop'\r",
+      "created_at": "2015-11-14T13:51:15.000+00:00",
+      "parent_ids": [
+        "17d7f1fc1c48ea243c30498074621e1d0b24ff9f",
+        "f4648535ac0095b70903622ad656075d1ec94f35"
+      ],
+      "message": "Merge branch 'feature/fresh' into 'develop'\r\n\r\nAdd fresh\r\n\r\n\r\n\r\nSee merge request !7",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2015-11-14T13:51:15.000+00:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2015-11-14T13:51:15.000+00:00"
+    },
+    {
+      "id": "1ba8a1f067dd4cf884cb7eed17a983f4b275347f",
+      "short_id": "1ba8a1f0",
+      "title": "gitlab_mr_release init",
+      "created_at": "2015-11-15T01:55:46.000+09:00",
+      "parent_ids": [
+        "4fe540bbeca53702937cf84852782ec0e7d06c9d"
+      ],
+      "message": "gitlab_mr_release init\n",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2015-11-15T01:55:46.000+09:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2015-11-15T01:55:46.000+09:00"
+    },
+    {
+      "id": "860b7d9f09ceb5f8f0142d59bb7134de4a450f5d",
+      "short_id": "860b7d9f",
+      "title": "Add a_la_mode",
+      "created_at": "2017-12-19T23:21:10.000+09:00",
+      "parent_ids": [
+        "1ba8a1f067dd4cf884cb7eed17a983f4b275347f"
+      ],
+      "message": "Add a_la_mode\n",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2017-12-19T23:21:10.000+09:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2017-12-19T23:21:10.000+09:00"
+    },
+    {
+      "id": "fa7c5827aaee085dc30ca091f9693ebabee15eff",
+      "short_id": "fa7c5827",
+      "title": "Merge branch 'feature/alamode' into 'develop'",
+      "created_at": "2017-12-19T14:21:42.000+00:00",
+      "parent_ids": [
+        "1ba8a1f067dd4cf884cb7eed17a983f4b275347f",
+        "860b7d9f09ceb5f8f0142d59bb7134de4a450f5d"
+      ],
+      "message": "Merge branch 'feature/alamode' into 'develop'\n\nAdd a_la_mode\n\nSee merge request sue445/gitlab_example!28",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2017-12-19T14:21:42.000+00:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2017-12-19T14:21:42.000+00:00"
+    },
+    {
+      "id": "d93c34c0ceece56bf7b64f71cec333940398a90c",
+      "short_id": "d93c34c0",
+      "title": "Merge branch 'develop' into 'master'",
+      "created_at": "2017-12-19T14:54:01.000+00:00",
+      "parent_ids": [
+        "17d7f1fc1c48ea243c30498074621e1d0b24ff9f",
+        "fa7c5827aaee085dc30ca091f9693ebabee15eff"
+      ],
+      "message": "Merge branch 'develop' into 'master'\n\nDevelop\n\nSee merge request sue445/gitlab_example!29",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2017-12-19T14:54:01.000+00:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2017-12-19T14:54:01.000+00:00"
+    },
+    {
+      "id": "96dc3dd5e44e73b9cbe1d01e0479c4cb65aa4020",
+      "short_id": "96dc3dd5",
+      "title": "Bump version",
+      "created_at": "2017-12-19T23:54:23.000+09:00",
+      "parent_ids": [
+        "d93c34c0ceece56bf7b64f71cec333940398a90c"
+      ],
+      "message": "Bump version\n",
+      "author_name": "sue445",
+      "author_email": "sue445@sue445.net",
+      "authored_date": "2017-12-19T23:54:23.000+09:00",
+      "committer_name": "sue445",
+      "committer_email": "sue445@sue445.net",
+      "committed_date": "2017-12-19T23:54:23.000+09:00"
+    }
+  ],
+  "diffs": [
+    {
+      "old_path": ".env.gitlab",
+      "new_path": ".env.gitlab",
+      "a_mode": "0",
+      "b_mode": "100644",
+      "new_file": true,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff": "--- /dev/null\n+++ b/.env.gitlab\n@@ -0,0 +1,2 @@\n+GITLAB_PROJECT_NAME=sue445/gitlab_example\n+TEMPLATE_FILE=gitlab_mr_release.md.erb\n"
+    },
+    {
+      "old_path": "README.md",
+      "new_path": "README.md",
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff": "--- a/README.md\n+++ b/README.md\n@@ -14,3 +14,15 @@\n   * cure_mint\n   * cure_aqua\n   * milky_rose\n+* fresh\n+  * cure_peach\n+  * cure_berry\n+  * cure_pine\n+  * cure_passion\n+* a_la_mode\n+  * cure_whip\n+  * cure_custard\n+  * cure_gelato\n+  * cure_macaron\n+  * cure_chocolat\n+  * cure_parfait\n"
+    },
+    {
+      "old_path": "VERSION",
+      "new_path": "VERSION",
+      "a_mode": "100644",
+      "b_mode": "100644",
+      "new_file": false,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff": "--- a/VERSION\n+++ b/VERSION\n@@ -1 +1 @@\n-0.0.3\n+0.0.4\n"
+    },
+    {
+      "old_path": "gitlab_mr_release.md.erb",
+      "new_path": "gitlab_mr_release.md.erb",
+      "a_mode": "0",
+      "b_mode": "100644",
+      "new_file": true,
+      "renamed_file": false,
+      "deleted_file": false,
+      "diff": "--- /dev/null\n+++ b/gitlab_mr_release.md.erb\n@@ -0,0 +1,4 @@\n+# MergeRequests\n+<% merge_requests.each do |mr| %>\n+* [ ] !<%= mr.iid %> <%= mr.title %>\n+<% end %>\n"
+    }
+  ],
+  "compare_timeout": false,
+  "compare_same_ref": false
+}
