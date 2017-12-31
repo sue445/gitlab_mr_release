@@ -4,10 +4,13 @@ rvm:
 - 2.2.5
 - 2.3.1
 - 2.4.1
+- 2.5.0
 - ruby-head
 cache: bundler
 sudo: false
-before_install: gem install bundler -v 1.10.6
+before_install:
+- gem update --system --no-document
+- gem install bundler -v 1.16.1 --no-document
 before_script:
 - export CODECLIMATE_REPO_TOKEN=771643fe0b3a3f2185eacf5fb025ec009d40cab4402d97b83ece04436e5e1739
 - export CI=true
