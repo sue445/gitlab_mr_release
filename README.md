@@ -3,7 +3,7 @@
 Release MergeRequest generator for [GitLab](https://about.gitlab.com/)
 
 [![Gem Version](https://badge.fury.io/rb/gitlab_mr_release.svg)](https://badge.fury.io/rb/gitlab_mr_release)
-[![Build Status](https://travis-ci.org/sue445/gitlab_mr_release.svg?branch=master)](https://travis-ci.org/sue445/gitlab_mr_release)
+[![Build Status](https://github.com/sue445/gitlab_mr_release/workflows/test/badge.svg?branch=master)](https://github.com/sue445/gitlab_mr_release/actions?query=workflow%3Atest)
 [![Code Climate](https://codeclimate.com/github/sue445/gitlab_mr_release/badges/gpa.svg)](https://codeclimate.com/github/sue445/gitlab_mr_release)
 [![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 
