@@ -42,13 +42,31 @@ module GitlabMrRelease
 
     def create_merge_request(source_branch:, target_branch:, title:, template:, labels:)
       iids = merge_request_iids_between(target_branch, source_branch)
-      options = {
-        source_branch: source_branch,
-        target_branch: target_branch,
-        description:   generate_description(iids, template),
-        labels:        labels,
-      }
-      Gitlab.create_merge_request(@project_name, title, options)
+      description = generate_description(iids, template)
+
+      mr = find_current_release_mr(source_branch, target_branch)
+      if mr.nil?
+        options = {
+          source_branch: source_branch,
+          target_branch: target_branch,
+          description:   description,
+          labels:        labels,
+        }
+        Gitlab.create_merge_request(@project_name, title, options)
+      else
+        options = {
+          title: title,
+          description: description
+        }
+        Gitlab.update_merge_request(@project_name, mr.iid, options)
+      end
+    end
+
+    # find release mr already exists
+    def find_current_release_mr(source_branch, target_branch)
+      Gitlab.merge_requests(@project_name, state: :opened).find do |mr|
+        mr.source_branch == source_branch && mr.target_branch == target_branch
+      end
     end
   end
 end
