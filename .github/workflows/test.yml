@@ -86,6 +86,7 @@ jobs:
           icon_emoji: ":octocat:"
           url: ${{ secrets.SLACK_WEBHOOK }}
           token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
 
   notify:
     needs:
@@ -103,3 +104,4 @@ jobs:
           icon_emoji: ":octocat:"
           url: ${{ secrets.SLACK_WEBHOOK }}
           token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
