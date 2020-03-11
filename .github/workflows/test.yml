@@ -81,6 +81,7 @@ jobs:
         uses: homoluctus/slatify@master
         if: "! success()"
         continue-on-error: true
+        continue-on-error: true
         with:
           job_name: ${{ format('*build* ({0})', matrix.ruby) }}
           type: ${{ job.status }}
@@ -98,6 +99,7 @@ jobs:
       - name: Slack Notification (success)
         uses: homoluctus/slatify@master
         if: always()
+        continue-on-error: true
         continue-on-error: true
         with:
           job_name: '*build*'
