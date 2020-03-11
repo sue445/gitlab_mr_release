@@ -98,4 +98,27 @@ describe GitlabMrRelease::Project do
 
     it { should eq description }
   end
+
+  describe "#find_current_release_mr" do
+    before do
+      stub_request(:get, "#{api_endpoint}/projects/#{escaped_project_name}/merge_requests?state=opened").
+        with(headers: { "Accept" => "application/json", "Private-Token" => private_token }).
+        to_return(status: 200, body: read_stub("merge_requests_with_state_opened.json"), headers: {})
+    end
+
+    context("the release mr exists") do
+      subject { project.find_current_release_mr("develop", "master") }
+      it "returns an instance of mr" do
+        mr = subject
+
+        expect(mr).to be_an_instance_of Gitlab::ObjectifiedHash
+        expect(mr.id).to eq 165679
+      end
+    end
+
+    context("the release mr does not exist") do
+      subject { project.find_current_release_mr("develop", "release") }
+      it { should be_nil }
+    end
+  end
 end
