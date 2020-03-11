@@ -108,7 +108,12 @@ describe GitlabMrRelease::Project do
 
     context("the release mr exists") do
       subject { project.find_current_release_mr("develop", "master") }
-      it { should_not be_nil }
+      it "returns an instance of mr" do
+        mr = subject
+
+        expect(mr).to be_an_instance_of Gitlab::ObjectifiedHash
+        expect(mr.id).to eq 165679
+      end
     end
 
     context("the release mr does not exist") do
