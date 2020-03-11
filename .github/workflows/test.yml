@@ -80,13 +80,13 @@ jobs:
       - name: Slack Notification (not success)
         uses: homoluctus/slatify@master
         if: "! success()"
+        continue-on-error: true
         with:
           job_name: ${{ format('*build* ({0})', matrix.ruby) }}
           type: ${{ job.status }}
           icon_emoji: ":octocat:"
           url: ${{ secrets.SLACK_WEBHOOK }}
           token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
 
   notify:
     needs:
@@ -98,10 +98,10 @@ jobs:
       - name: Slack Notification (success)
         uses: homoluctus/slatify@master
         if: always()
+        continue-on-error: true
         with:
           job_name: '*build*'
           type: ${{ job.status }}
           icon_emoji: ":octocat:"
           url: ${{ secrets.SLACK_WEBHOOK }}
           token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
