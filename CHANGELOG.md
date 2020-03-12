@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.0.1...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.0...master)
+
+## v1.1.0
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.0.1...v1.1.0)
+
+* Update the release MR when release MR is already exists
+  * https://github.com/sue445/gitlab_mr_release/pull/41
 
 ## v1.0.1
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.0.0...v1.0.1)
