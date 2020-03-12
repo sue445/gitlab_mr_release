@@ -56,7 +56,7 @@ module GitlabMrRelease
       else
         options = {
           title: title,
-          description: description
+          description: apply_checkbox_statuses(description, mr.description)
         }
         Gitlab.update_merge_request(@project_name, mr.iid, options)
       end
@@ -67,6 +67,20 @@ module GitlabMrRelease
       Gitlab.merge_requests(@project_name, state: :opened).find do |mr|
         mr.source_branch == source_branch && mr.target_branch == target_branch
       end
+    end
+
+    def apply_checkbox_statuses(new_desc, old_desc)
+      checked_iids = old_desc.split("\n").select{ |line| line.include?("[x]") }.map{ |line| /\!\d+/.match(line).to_a.first }.compact
+
+      applied_lines = new_desc.split("\n").map do |line|
+        iid = /\!\d+/.match(line).to_a.first
+        if !iid.nil? && checked_iids.include?(iid)
+          line.gsub(/^( *)(\d+?\.|-|\*) \[ \]/) { "#{$1}#{$2} [x]" }
+        else
+          line
+        end
+      end
+      applied_lines.join("\n")
     end
   end
 end
