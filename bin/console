@@ -9,14 +9,11 @@ require "gitlab_mr_release"
 require "dotenv"
 Dotenv.load(".env.gitlab", "~/.env.gitlab")
 
-clean_room = Object.new
-clean_room.instance_eval do
-  @project = GitlabMrRelease::Project.new(
-    api_endpoint:  ENV["GITLAB_API_ENDPOINT"],
-    private_token: ENV["GITLAB_API_PRIVATE_TOKEN"],
-    project_name:  ENV["GITLAB_PROJECT_NAME"],
-  )
-end
+@project = GitlabMrRelease::Project.new(
+  api_endpoint:  ENV["GITLAB_API_ENDPOINT"],
+  private_token: ENV["GITLAB_API_PRIVATE_TOKEN"],
+  project_name:  ENV["GITLAB_PROJECT_NAME"],
+)
 
-require "pry"
-Pry.start(clean_room)
+require "irb"
+IRB.start
