@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.0...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.1...master)
+
+## v1.1.1
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.0...v1.1.1)
+
+* Preserve checkbox statuses on update
+  * https://github.com/sue445/gitlab_mr_release/pull/45
 
 ## v1.1.0
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.0.1...v1.1.0)
