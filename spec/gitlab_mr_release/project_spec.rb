@@ -121,4 +121,39 @@ describe GitlabMrRelease::Project do
       it { should be_nil }
     end
   end
+
+  describe "#apply_checkbox_statuses" do
+    let(:new_description) do
+      <<-MARKDNWN.strip_heredoc.strip
+      # MergeRequests
+      * [ ] !11 aaa
+      * [ ] !12 bbb
+      * [ ] !13 ccc
+      * [ ] !14 ddd
+      MARKDNWN
+    end
+
+    let(:old_description) do
+      <<-MARKDNWN.strip_heredoc.strip
+      # MergeRequests
+      * [ ] !11 aaa
+      * [x] !12 bbb
+      * [x] !13 ccc
+      MARKDNWN
+    end
+
+    let(:applied_descriptopn) do
+      <<-MARKDNWN.strip_heredoc.strip
+      # MergeRequests
+      * [ ] !11 aaa
+      * [x] !12 bbb
+      * [x] !13 ccc
+      * [ ] !14 ddd
+      MARKDNWN
+    end
+
+    subject { project.apply_checkbox_statuses(new_description, old_description) }
+
+    it { should eq applied_descriptopn }
+  end
 end
