@@ -21,12 +21,12 @@ describe GitlabMrRelease::CLI do
 
     let(:env) do
       {
-        "GITLAB_API_ENDPOINT"      => gitlab_api_envpoint,
+        "GITLAB_API_ENDPOINT"      => gitlab_api_endpoint,
         "GITLAB_API_PRIVATE_TOKEN" => gitlab_api_private_token,
         "GITLAB_PROJECT_NAME"      => gitlab_project_name,
       }
     end
-    let(:gitlab_api_envpoint)      { "http://example.com/api/v4" }
+    let(:gitlab_api_endpoint)      { "http://example.com/api/v4" }
     let(:gitlab_api_private_token) { "XXXXXXXXXXXXXXXXXXX" }
     let(:gitlab_project_name)      { "group/name" }
 
@@ -56,7 +56,7 @@ describe GitlabMrRelease::CLI do
     end
 
     context "When invalid api version" do
-      let(:gitlab_api_envpoint) { "http://example.com/api/v3" }
+      let(:gitlab_api_endpoint) { "http://example.com/api/v3" }
 
       it { expect { subject }.to raise_error GitlabMrRelease::InvalidApiVersionError }
     end
