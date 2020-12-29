@@ -16,7 +16,7 @@ require "gitlab_mr_release/cli"
 require "webmock"
 require "dotenv"
 require "webmock/rspec"
-require "active_support/all"
+require "active_support/core_ext/string/strip"
 require "rspec-parameterized"
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
