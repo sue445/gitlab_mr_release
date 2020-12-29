@@ -67,6 +67,7 @@ jobs:
           set -xe
           bundle exec rspec
         continue-on-error: ${{ matrix.allow_failures == 'true' }}
+        timeout-minutes: 1
 
       - name: Teardown Code Climate Test Reporter
         uses: aktions/codeclimate-test-reporter@v1
