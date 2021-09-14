@@ -10,6 +10,11 @@ if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.2.2")
   end
 end
 
+if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.3.0")
+  # NOTE: httparty v0.19.0+ requires Ruby 2.3+
+  gem "httparty", "< 0.19.0"
+end
+
 if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.5.0")
   # NOTE: unparser v0.3.0+ requires Ruby 2.5+
   gem "unparser", "< 0.3.0"
