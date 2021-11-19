@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.1...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.2...master)
+
+## v1.1.2
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.1...v1.1.2)
+
+* Enable MFA requirement for gem releasing
+  * https://github.com/sue445/gitlab_mr_release/pull/53
 
 ## v1.1.1
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.0...v1.1.1)
