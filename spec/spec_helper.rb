@@ -18,6 +18,7 @@ require "dotenv"
 require "webmock/rspec"
 require "active_support/core_ext/string/strip"
 require "rspec-parameterized"
+require "ostruct"
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
