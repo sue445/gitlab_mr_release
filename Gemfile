@@ -28,3 +28,8 @@ if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.4.0")
   # c.f. https://github.com/NARKOZ/gitlab/commit/d9ef580#diff-84e3ba49bf244c6684f7d26a3312adc4R81
   gem "gitlab", "< 4.14.0"
 end
+
+if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.7.0")
+  # term-ansicolor 1.9.0+ doesn't work on Ruby < 2.7
+  gem "term-ansicolor", "< 1.9.0"
+end
