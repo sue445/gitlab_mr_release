@@ -16,6 +16,9 @@ if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.3.0")
 
   # NOTE: webmock v3.15.0+ requires Ruby 2.3+
   gem "webmock", "< 3.15.0"
+
+  # NOTE: logger v1.3.0+ requires Ruby 2.3+
+  gem "logger", "< 1.3.0"
 end
 
 if Gem::Version.create(RUBY_VERSION) < Gem::Version.create("2.5.0")
