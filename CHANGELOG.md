@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.2...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.0...master)
+
+## v2.0.0
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.2...v2.0.0)
+
+* Fix deprecation warning at `ERB.new` and requires Ruby 2.6+
+  * https://github.com/sue445/gitlab_mr_release/pull/84
 
 ## v1.1.2
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.1...v1.1.2)
