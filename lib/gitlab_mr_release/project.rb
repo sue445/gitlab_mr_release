@@ -37,7 +37,7 @@ module GitlabMrRelease
 
     def generate_description(iids, template)
       merge_requests = Gitlab.merge_requests(@project_name, iids: iids)
-      ERB.new(template, nil, "-").result(binding).strip
+      ERB.new(template, trim_mode: "-").result(binding).strip
     end
 
     def create_merge_request(source_branch:, target_branch:, title:, template:, labels:)
