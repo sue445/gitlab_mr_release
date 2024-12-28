@@ -11,7 +11,7 @@ This is inspired by the [git-pr-release](https://github.com/motemen/git-pr-relea
 
 ## Requirements
 
-* Ruby v2.1+
+* Ruby v2.6+
 * GitLab v8.17.0+
 * GitLab API v4+
 
