@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.0...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.1...master)
+
+## [v2.0.1](https://github.com/sue445/gitlab_mr_release/releases/tag/v2.0.1)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.0...v2.0.1)
+
+* Release gem from GitHub Actions
+  * https://github.com/sue445/gitlab_mr_release/pull/92
 
 ## v2.0.0
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v1.1.2...v2.0.0)
