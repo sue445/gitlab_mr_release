@@ -38,7 +38,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - run: bundle update --jobs $(nproc) --retry 3
+      - run: bundle update --all --jobs $(nproc) --retry 3
 
       - name: Setup Code Climate Test Reporter
         uses: aktions/codeclimate-test-reporter@7634aa9ac7883182f583f15ff7b6ff519939dd0a # v1.2.0
