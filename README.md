@@ -4,7 +4,7 @@ Release MergeRequest generator for [GitLab](https://about.gitlab.com/)
 
 [![Gem Version](https://badge.fury.io/rb/gitlab_mr_release.svg)](https://badge.fury.io/rb/gitlab_mr_release)
 [![test](https://github.com/sue445/gitlab_mr_release/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/gitlab_mr_release/actions/workflows/test.yml)
-[![Code Climate](https://codeclimate.com/github/sue445/gitlab_mr_release/badges/gpa.svg)](https://codeclimate.com/github/sue445/gitlab_mr_release)
+[![Maintainability](https://qlty.sh/gh/sue445/projects/gitlab_mr_release/maintainability.svg)](https://qlty.sh/gh/sue445/projects/gitlab_mr_release)
 [![Coverage Status](https://coveralls.io/repos/sue445/gitlab_mr_release/badge.svg?branch=master&service=github)](https://coveralls.io/github/sue445/gitlab_mr_release?branch=master)
 
 This is inspired by the [git-pr-release](https://github.com/motemen/git-pr-release)
