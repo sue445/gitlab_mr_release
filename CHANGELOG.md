@@ -1,5 +1,11 @@
 ## Unreleased
-[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.1...master)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.2...master)
+
+## [v2.0.2](https://github.com/sue445/gitlab_mr_release/releases/tag/v2.0.2)
+[full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.1...v2.0.2)
+
+* Migrate release_gem workflow to sue445/workflows (Also testing the gem release)
+  * https://github.com/sue445/gitlab_mr_release/pull/131
 
 ## [v2.0.1](https://github.com/sue445/gitlab_mr_release/releases/tag/v2.0.1)
 [full changelog](http://github.com/sue445/gitlab_mr_release/compare/v2.0.0...v2.0.1)
